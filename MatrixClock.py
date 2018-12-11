@@ -9,7 +9,6 @@ from Adafruit_LED_Backpack import Matrix8x8
 displayBrightness = 5
 displays = [Matrix8x8.Matrix8x8(address=0x70), Matrix8x8.Matrix8x8(address=0x71), Matrix8x8.Matrix8x8(address=0x72), Matrix8x8.Matrix8x8(address=0x73), Matrix8x8.Matrix8x8(address=0x74), Matrix8x8.Matrix8x8(address=0x75), Matrix8x8.Matrix8x8(address=0x76)]
 
-
 def clearDisplays():
     """clear all the displays in the clock"""
     global displayBrightness
