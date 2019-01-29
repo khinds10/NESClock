@@ -23,7 +23,7 @@ def writeCharacter(displayNumber, textValue):
     global displays
     image = Image.new('1', (8, 8))
     draw = ImageDraw.Draw(image)
-    fnt = ImageFont.truetype('PressStart2P.ttf', 9)
+    fnt = ImageFont.truetype('joystix.ttf', 8)
     draw.text((0,0), textValue, font=fnt, fill=255)
     image  = image.transpose(Image.ROTATE_90)
     displays[displayNumber].set_image(image)
@@ -41,9 +41,9 @@ clearDisplays()
 showColon = True
 while True:
     if showColon == True:
-        now = time.strftime("%I:%M%p")
+        now = time.strftime("%I %M%p")
     if showColon == False:
-            now = time.strftime("%I %M%p")
+            now = time.strftime("%I*%M%p")
     showColon = not showColon
     writeTime(now)
     time.sleep(1)
