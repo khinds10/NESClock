@@ -43,7 +43,7 @@ scheduler = sched.scheduler(time.time, time.sleep)
 def animateRandomSprite(sc):
     """ get a random sprite sequence to animate on the panel, updating each minute """
     try:   
-        files = glob.glob("./sprites/**/")
+        files = glob.glob("/home/pi/NESClock/sprites/**/")
         selectedSprite = random.choice(files)
         selectedSpriteFrames = glob.glob(selectedSprite + "/*.bmp")
         selectedSpriteFrames.sort()
