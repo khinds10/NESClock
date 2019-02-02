@@ -45,9 +45,6 @@ def animateRandomSprite(sc):
     try:   
         files = glob.glob("./sprites/**/")
         selectedSprite = random.choice(files)
-        print selectedSprite
-        selectedSprite = './sprites/luigi3/'
-        
         selectedSpriteFrames = glob.glob(selectedSprite + "/*.bmp")
         selectedSpriteFrames.sort()
 
