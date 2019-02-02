@@ -43,7 +43,7 @@ while True:
     if showColon == True:
         now = time.strftime("%I %M%p")
     if showColon == False:
-            now = time.strftime("%I*%M%p")
+            now = time.strftime("%I.%M%p")
     showColon = not showColon
     writeTime(now)
     time.sleep(1)
