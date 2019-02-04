@@ -192,11 +192,11 @@ Cuttable thin plexi-glass sheet
 
 **12x12" 2 way mirror plexi-glass sheet**
 
-![2 Way Mirror](https://raw.githubusercontent.com/khinds10/NESClock/construction/2-way-mirror.png "2 Way Mirror")
+![2 Way Mirror](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/2-way-mirror.png "2 Way Mirror")
 
 **12x12" tinted plexi-glass sheet**
 
-![Tinted Plexi-Glass](https://raw.githubusercontent.com/khinds10/NESClock/construction/tinted-plexi-glass.png "Tinted Plexi-Glass")
+![Tinted Plexi-Glass](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/tinted-plexi-glass.png "Tinted Plexi-Glass")
 
 # Building the Sprite Clock
 
