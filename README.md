@@ -10,17 +10,17 @@ https://www.raspberrypi.org/downloads/raspbian/
 >Insert the microSD to your computer via USB adapter and create the disk image using the `dd` command
 >
 > Locate your inserted microSD card via the `df -h` command, unmount it and create the disk image with the disk copy `dd` command
-> 
+>
 > $ `df -h`
 > */dev/sdb1       7.4G   32K  7.4G   1% /media/XXX/1234-5678*
-> 
+>
 > $ `umount /dev/sdb1`
-> 
+>
 > **Caution: be sure the command is completely accurate, you can damage other disks with this command**
-> 
+>
 > *if=location of RASPBIAN JESSIE LITE image file*
 > *of=location of your microSD card*
-> 
+>
 > $ `sudo dd bs=4M if=/path/to/raspbian-jessie-lite.img of=/dev/sdb`
 > *(note: in this case, it's /dev/sdb, /dev/sdb1 was an existing factory partition on the microSD)*
 
@@ -152,6 +152,12 @@ Install the NeoPixel Driver as follows
 >
 >`sudo python strandtest.py`
 
+**Clone the repository in your home directory for the clock to work**
+
+> `cd ~`
+>
+> `git clone https://github.com/khinds10/NESClock.git`
+
 # Supplies Needed
 
 Pi Zero W/1.3/1.2
@@ -182,15 +188,62 @@ Cuttable thin plexi-glass sheet
 
 ![Thin Plexi Glass Sheet](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/plexi.png "Thin Plexi Glass Sheet")
 
+
+**12x12" 2 way mirror plexi-glass sheet**
+
+![2 Way Mirror](https://raw.githubusercontent.com/khinds10/NESClock/construction/2-way-mirror.png "2 Way Mirror")
+
+**12x12" tinted plexi-glass sheet**
+
+![Tinted Plexi-Glass](https://raw.githubusercontent.com/khinds10/NESClock/construction/tinted-plexi-glass.png "Tinted Plexi-Glass")
+
 # Building the Sprite Clock
 
-![Wiring Diagram](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wiringdiagram.png "Wiring Diagram")
+**1) Prepare the HT16K33 matrix units** 
 
-**Clone the repository in your home directory for the clock to work**
+Solder the pins on the back to assign them each a unique i2c address.  There are 3 jumpers to solder or not solder in 8 combinations.  I've soldered all combinations to assign each unit a different address to be accessed by the python code to show the clock time.
 
-> `cd ~`
+**2) Print the Project Enclosure**
+
+In the 3D print folder find the "defuser-grid-final.stl" print model to be a working pixel defuser to focus the light from each LED to a square shape to enhance the output of the sprites on the clock.
+
+**3) Tape together the HT16K33 units in a solid row**
+
+Make sure each unit is addressed from \0x70 to \0x76 in a row for the code to work (you can adjust the code if they're out of order later)
+
+**4) Tape the printed pixel defuser to the LED matrix, spray frosted white paint and cut a piece of thin plexi-glass to then tape over the top of the defuser.**  
+
+This will continue to scatter the light even more to improve the sprite clarity.
+
+https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wiringdiagram.png
+
+**5) Begin wiring the devices**
+
+**HT16K33 Matrix Units**
+
+> GND -> GND
 >
-> `git clone https://github.com/khinds10/NESClock.git`
+> DATA -> SDA
+>
+> CLK -> SCL
+>
+> VCC -> 5V
+
+**RGB 16x16 Unit**
+
+> GND -> GND
+>
+> DATA -> GPIO 18
+>
+> VCC -> 5V
+
+**6) In place of the normal picture frame glass, replace it with the 2 way mirror (12x12" sheet) and gray tinted plastic glass (12x12" sheet).**  
+
+This will conceal the components inside the frame, so you can see only the pixel light output.
+
+**7) Place the components level side the frame with the mirror and tinted glass installed.**
+
+Now you can place the back of the frame on to hold the components in place.  This will be the hardest part, I was lucky to have a frame with a flexible enough back.  I got everything level and it looked great.
 
 ### Set pi user crontab 
 
@@ -200,7 +253,7 @@ Enter the following line for a minute by minute crontab
 
 `@reboot nohup python /home/pi/NESClock/MatrixClock.py > /dev/null 2>&1`
 
-### Set root user crontab (this library requires root access)
+### Set root user crontab (RGB Sprite Panel library requires root access)
 
 Set "on reboot" to run the candle python script forever
 
