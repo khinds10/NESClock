@@ -156,36 +156,35 @@ Install the NeoPixel Driver as follows
 
 Pi Zero W/1.3/1.2
 
-![Pi Zero](https://raw.githubusercontent.com/khinds10/NESClock/construction/PiZero.jpg "Pi Zero")
+![Pi Zero](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/PiZero.jpg "Pi Zero")
 
 Wifi USB (if Pi Zero 1.3/1.2)
 
-![WIFI USB](https://raw.githubusercontent.com/khinds10/NESClock/construction/wifi.jpg "WIFI USB")
+![WIFI USB](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wifi.jpg "WIFI USB")
 
 Keyestudio I2C 8x8 LED Matrix HT16K33 (x7)
 
-![LED 16x16](https://raw.githubusercontent.com/khinds10/NESClock/construction/16x16-led.png "LED 16x16 Matrix")
-
+![LED 16x16](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/16x16-led.png "LED 16x16 Matrix")
 
 16x16 RGB LED Flexible WS2812B Matrix
 
-![WS2812B Matrix](https://raw.githubusercontent.com/khinds10/NESClock/construction/16x16-RGB.png "WS2812B Matrix")
+![WS2812B Matrix](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/16x16-RGB.png "WS2812B Matrix")
 
 Frosted Paint
 
-![Frosted Paint](https://raw.githubusercontent.com/khinds10/NESClock/construction/paint.jpg "Frosted Paint")
+![Frosted Paint](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/paint.jpg "Frosted Paint")
 
 12x12 Picture Frame
 
-![Picture Frame](https://raw.githubusercontent.com/khinds10/NESClock/construction/picture-frame.png "Picture Frame")
+![Picture Frame](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/picture-frame.png "Picture Frame")
 
 Cuttable thin plexi-glass sheet
 
-![Thin Plexi Glass Sheet](https://raw.githubusercontent.com/khinds10/NESClock/construction/plexi.png "Thin Plexi Glass Sheet")
+![Thin Plexi Glass Sheet](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/plexi.png "Thin Plexi Glass Sheet")
 
 # Building the Sprite Clock
 
-![Wiring Diagram](https://raw.githubusercontent.com/khinds10/NESClock/construction/wiringdiagram.png "Wiring Diagram")
+![Wiring Diagram](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wiringdiagram.png "Wiring Diagram")
 
 **Clone the repository in your home directory for the clock to work**
 
