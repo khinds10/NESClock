@@ -188,14 +188,13 @@ Cuttable thin plexi-glass sheet
 
 ![Thin Plexi Glass Sheet](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/plexi.png "Thin Plexi Glass Sheet")
 
-
 **12x12" 2 way mirror plexi-glass sheet**
 
-![2 Way Mirror](https://raw.githubusercontent.com/khinds10/NESClock/construction/2-way-mirror.png "2 Way Mirror")
+![2 Way Mirror](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/2-way-mirror.png "2 Way Mirror")
 
 **12x12" tinted plexi-glass sheet**
 
-![Tinted Plexi-Glass](https://raw.githubusercontent.com/khinds10/NESClock/construction/tinted-plexi-glass.png "Tinted Plexi-Glass")
+![Tinted Plexi-Glass](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/tinted-plexi-glass.png "Tinted Plexi-Glass")
 
 # Building the Sprite Clock
 
@@ -215,7 +214,8 @@ Make sure each unit is addressed from \0x70 to \0x76 in a row for the code to wo
 
 This will continue to scatter the light even more to improve the sprite clarity.
 
-https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wiringdiagram.png
+![Wiring Diagram](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wiringdiagram.png
+ "Wiring Diagram")
 
 **5) Begin wiring the devices**
 
