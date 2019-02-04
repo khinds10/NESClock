@@ -1,6 +1,8 @@
 # 8 Bit Sprite Clock
 Game Room Nintendo Time w/ Friendly Sprites to greet you
 
+![Final Construction](https://raw.githubusercontent.com/khinds10/NESClock/construction/final-construction.png "Final Construction")
+
 #### Flashing RaspberriPi Hard Disk / Install Required Software (Using Ubuntu Linux)
 
 Download "RASPBIAN JESSIE LITE"
@@ -188,7 +190,6 @@ Cuttable thin plexi-glass sheet
 
 ![Thin Plexi Glass Sheet](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/plexi.png "Thin Plexi Glass Sheet")
 
-
 **12x12" 2 way mirror plexi-glass sheet**
 
 ![2 Way Mirror](https://raw.githubusercontent.com/khinds10/NESClock/construction/2-way-mirror.png "2 Way Mirror")
@@ -215,7 +216,7 @@ Make sure each unit is addressed from \0x70 to \0x76 in a row for the code to wo
 
 This will continue to scatter the light even more to improve the sprite clarity.
 
-https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wiringdiagram.png
+![Wiring Diagram](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wiringdiagram.png "Wiring Diagram")
 
 **5) Begin wiring the devices**
 
@@ -264,3 +265,5 @@ Set "on reboot" to run the candle python script forever
 `@reboot nohup python /home/pi/NESClock/SpritePanel.py > /dev/null 2>&1`
 
 # Finished!
+
+![Final](https://raw.githubusercontent.com/khinds10/NESClock/construction/final.png "Final")
