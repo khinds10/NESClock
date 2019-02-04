@@ -204,9 +204,13 @@ Cuttable thin plexi-glass sheet
 
 Solder the pins on the back to assign them each a unique i2c address.  There are 3 jumpers to solder or not solder in 8 combinations.  I've soldered all combinations to assign each unit a different address to be accessed by the python code to show the clock time.
 
+![Keystudio Pinout](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/keystudio-pinout.png "Keystudio Pinout")
+
 **2) Print the Project Enclosure**
 
 In the 3D print folder find the "defuser-grid-final.stl" print model to be a working pixel defuser to focus the light from each LED to a square shape to enhance the output of the sprites on the clock.
+
+![Defuser](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/defuser.png "Defuser")
 
 **3) Tape together the HT16K33 units in a solid row**
 
@@ -216,9 +220,15 @@ Make sure each unit is addressed from \0x70 to \0x76 in a row for the code to wo
 
 This will continue to scatter the light even more to improve the sprite clarity.
 
-![Wiring Diagram](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wiringdiagram.png "Wiring Diagram")
+![Tape Defuser](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/tape-defuser.png "Tape Defuser")
+
+![Frosted Defuser](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/frosted.png "Frosted Defuser")
+
 
 **5) Begin wiring the devices**
+
+![Wiring Diagram](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wiringdiagram.png "Wiring Diagram")
+
 
 **HT16K33 Matrix Units**
 
@@ -245,6 +255,8 @@ This will conceal the components inside the frame, so you can see only the pixel
 **7) Place the components level side the frame with the mirror and tinted glass installed.**
 
 Now you can place the back of the frame on to hold the components in place.  This will be the hardest part, I was lucky to have a frame with a flexible enough back.  I got everything level and it looked great.
+
+![Assemble Insides](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/insides.png "Assemble Insides")
 
 ### Set pi user crontab 
 
