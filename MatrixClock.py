@@ -23,7 +23,7 @@ def writeCharacter(displayNumber, textValue):
     global displays
     image = Image.new('1', (8, 8))
     draw = ImageDraw.Draw(image)
-    fnt = ImageFont.truetype('joystix.ttf', 8)
+    fnt = ImageFont.truetype('/home/pi/NESClock/joystix.ttf', 8)
     draw.text((0,0), textValue, font=fnt, fill=255)
     image  = image.transpose(Image.ROTATE_90)
     displays[displayNumber].set_image(image)
