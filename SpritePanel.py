@@ -67,4 +67,4 @@ def animateRandomSprite(sc):
 
 # start animating!
 animateRandomSprite(0)
-s.run()
+scheduler.run()
