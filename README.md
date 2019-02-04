@@ -1,7 +1,7 @@
 # 8 Bit Sprite Clock
 Game Room Nintendo Time w/ Friendly Sprites to greet you
 
-![Final Construction](https://raw.githubusercontent.com/khinds10/NESClock/construction/final-construction.png "Final Construction")
+![Final Construction](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/final-construction.png "Final Construction")
 
 #### Flashing RaspberriPi Hard Disk / Install Required Software (Using Ubuntu Linux)
 
@@ -266,4 +266,4 @@ Set "on reboot" to run the candle python script forever
 
 # Finished!
 
-![Final](https://raw.githubusercontent.com/khinds10/NESClock/construction/final.png "Final")
+![Final](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/final.png "Final")
