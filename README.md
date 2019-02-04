@@ -212,11 +212,7 @@ In the 3D print folder find the "defuser-grid-final.stl" print model to be a wor
 
 ![Defuser](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/defuser.png "Defuser")
 
-**3) Tape together the HT16K33 units in a solid row**
-
-Make sure each unit is addressed from \0x70 to \0x76 in a row for the code to work (you can adjust the code if they're out of order later)
-
-**4) Tape the printed pixel defuser to the LED matrix, spray frosted white paint and cut a piece of thin plexi-glass to then tape over the top of the defuser.**  
+**3) Tape the printed pixel defuser to the LED matrix, spray frosted white paint and cut a piece of thin plexi-glass to then tape over the top of the defuser.**  
 
 This will continue to scatter the light even more to improve the sprite clarity.
 
@@ -224,11 +220,9 @@ This will continue to scatter the light even more to improve the sprite clarity.
 
 ![Frosted Defuser](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/frosted.png "Frosted Defuser")
 
-
-**5) Begin wiring the devices**
+**4) Begin wiring the devices**
 
 ![Wiring Diagram](https://raw.githubusercontent.com/khinds10/NESClock/master/construction/wiringdiagram.png "Wiring Diagram")
-
 
 **HT16K33 Matrix Units**
 
@@ -248,9 +242,13 @@ This will continue to scatter the light even more to improve the sprite clarity.
 >
 > VCC -> 5V
 
-**6) In place of the normal picture frame glass, replace it with the 2 way mirror (12x12" sheet) and gray tinted plastic glass (12x12" sheet).**  
+**5) In place of the normal picture frame glass, replace it with the 2 way mirror (12x12" sheet) and gray tinted plastic glass (12x12" sheet).**  
 
 This will conceal the components inside the frame, so you can see only the pixel light output.
+
+**6) Tape together the HT16K33 units in a solid row**
+
+Make sure each unit is addressed from \0x70 to \0x76 in a row for the code to work (you can adjust the code if they're out of order later)
 
 **7) Place the components level side the frame with the mirror and tinted glass installed.**
 
