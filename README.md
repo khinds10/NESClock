@@ -99,7 +99,7 @@ Add the following lines to have your raspberrypi automatically connect to your h
 >
 >$ `sudo apt-get install vim git python-smbus i2c-tools python-imaging python-smbus build-essential python-dev rpi.gpio python3 python3-pip python-numpy`
 
-**Update local timezone settings
+**Update local timezone settings**
 
 >$ `sudo dpkg-reconfigure tzdata`
 
