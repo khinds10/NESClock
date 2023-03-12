@@ -127,12 +127,7 @@ Add the following lines to have your raspberrypi automatically connect to your h
 
 >$ `cd ~`
 >
->$ `git clone https://github.com/adafruit/Adafruit_Python_LED_Backpack`
->
->$ `cd Adafruit_Python_LED_Backpack/`
->
->$ `sudo python setup.py install`
->
+>$ `pip3 install adafruit-circuitpython-ht16k33`
 
 **Install i2c Python Drivers**
 

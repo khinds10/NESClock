@@ -3,8 +3,7 @@
 # License: GPL 2.0
 from __future__ import division
 import time, sched, json, string, cgi, subprocess, json, datetime, glob, numpy, random
-from neopixel import *
-from Adafruit_LED_Backpack import SevenSegment
+from rpi_ws281x import PixelStrip, Color
 from PIL import Image
 
 # LED strip configuration:
@@ -20,10 +19,11 @@ LED_CHANNEL    = 0       # set to '1' for GPIOs 13, 19, 41, 45 or 53
 ######## YOU HAVE TO RUN AS ROOT!
 ############################################
 
-# setup the strip
-strip = Adafruit_NeoPixel(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
+# Create NeoPixel object with appropriate configuration.
+strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS, LED_CHANNEL)
+
+# Intialize the library (must be called once before other functions).
 strip.begin()
-strip.show()
 
 def prepareSpriteForMatrix(imagePixels):
     """ create final LED pixels list for display, the pixel indexes zig-zag back and forth on the LED matrix """
@@ -42,32 +42,37 @@ def prepareSpriteForMatrix(imagePixels):
 scheduler = sched.scheduler(time.time, time.sleep)
 def animateRandomSprite(sc):
     """ get a random sprite sequence to animate on the panel, updating each minute """
-    try:   
-        files = glob.glob("/home/pi/NESClock/sprites/**/")
-        selectedSprite = random.choice(files)
-        selectedSpriteFrames = glob.glob(selectedSprite + "/*.bmp")
-        selectedSpriteFrames.sort()
+    #try:   
+    files = glob.glob("/home/khinds/NESClock/sprites/**/")
+    selectedSprite = random.choice(files)
+    selectedSpriteFrames = glob.glob(selectedSprite + "/*.bmp")
+    selectedSpriteFrames.sort()
 
-        # create an array of LED matrix friendly pixels
-        spriteFrameRawData = []
-        for spriteFrame in selectedSpriteFrames:
-            im = Image.open(spriteFrame, 'r')
-            imagePixels = numpy.split(numpy.asarray(list(im.getdata())), 16)
-            spriteFrameRawData.append(prepareSpriteForMatrix(imagePixels))
-        
-        # render all pixel values as colors on the matrix frame by frame, dividing equally inside of 1 second of animation
-        animationCount = 0
-        while animationCount < 58:
-            for spriteFrame in spriteFrameRawData:
-                for i in range(0, strip.numPixels(), 1):
-                    strip.setPixelColor(i, Color(spriteFrame[i][1], spriteFrame[i][0], spriteFrame[i][2]))
-                strip.show()
-                time.sleep(1/len(selectedSpriteFrames))
-            animationCount = animationCount + 1
+    # create an array of LED matrix friendly pixels
+    spriteFrameRawData = []
+    for spriteFrame in selectedSpriteFrames:
+        im = Image.open(spriteFrame, 'r')
+        imagePixels = numpy.split(numpy.asarray(list(im.getdata())), 16)
+        spriteFrameRawData.append(prepareSpriteForMatrix(imagePixels))
+    
+    # render all pixel values as colors on the matrix frame by frame, dividing equally inside of 1 second of animation
+    animationCount = 0
+    while animationCount < 12:
+        for spriteFrame in spriteFrameRawData:
+            for i in range(0, strip.numPixels(), 1):
+                strip.setPixelColor(i, Color(int(spriteFrame[i][0]), int(spriteFrame[i][1]), int(spriteFrame[i][2])))
+                
+                
+                #strip.setPixelColor(i, Color(int(spriteFrame[i][2]), int(spriteFrame[i][1]), int(spriteFrame[i][0])))
+                
+            strip.show()
+            time.sleep(1/len(selectedSpriteFrames))
+        animationCount = animationCount + 1
 
-        scheduler.enter(1, 1, animateRandomSprite, (sc,))
-    except:
-        animateRandomSprite(0)
+    scheduler.enter(1, 1, animateRandomSprite, (sc,))
+    #except:
+    #    animateRandomSprite(0)
+    
 # start animating!
 animateRandomSprite(0)
 scheduler.run()
