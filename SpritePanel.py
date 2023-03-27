@@ -42,36 +42,36 @@ def prepareSpriteForMatrix(imagePixels):
 scheduler = sched.scheduler(time.time, time.sleep)
 def animateRandomSprite(sc):
     """ get a random sprite sequence to animate on the panel, updating each minute """
-    #try:   
-    files = glob.glob("/home/khinds/NESClock/sprites/**/")
-    selectedSprite = random.choice(files)
-    selectedSpriteFrames = glob.glob(selectedSprite + "/*.bmp")
-    selectedSpriteFrames.sort()
+    try:   
+        files = glob.glob("/home/khinds/NESClock/sprites/**/")
+        selectedSprite = random.choice(files)
+        selectedSpriteFrames = glob.glob(selectedSprite + "/*.bmp")
+        selectedSpriteFrames.sort()
 
-    # create an array of LED matrix friendly pixels
-    spriteFrameRawData = []
-    for spriteFrame in selectedSpriteFrames:
-        im = Image.open(spriteFrame, 'r')
-        imagePixels = numpy.split(numpy.asarray(list(im.getdata())), 16)
-        spriteFrameRawData.append(prepareSpriteForMatrix(imagePixels))
-    
-    # render all pixel values as colors on the matrix frame by frame, dividing equally inside of 1 second of animation
-    animationCount = 0
-    while animationCount < 12:
-        for spriteFrame in spriteFrameRawData:
-            for i in range(0, strip.numPixels(), 1):
-                strip.setPixelColor(i, Color(int(spriteFrame[i][0]), int(spriteFrame[i][1]), int(spriteFrame[i][2])))
-                
-                
-                #strip.setPixelColor(i, Color(int(spriteFrame[i][2]), int(spriteFrame[i][1]), int(spriteFrame[i][0])))
-                
-            strip.show()
-            time.sleep(1/len(selectedSpriteFrames))
-        animationCount = animationCount + 1
+        # create an array of LED matrix friendly pixels
+        spriteFrameRawData = []
+        for spriteFrame in selectedSpriteFrames:
+            im = Image.open(spriteFrame, 'r')
+            imagePixels = numpy.split(numpy.asarray(list(im.getdata())), 16)
+            spriteFrameRawData.append(prepareSpriteForMatrix(imagePixels))
+        
+        # render all pixel values as colors on the matrix frame by frame, dividing equally inside of 1 second of animation
+        animationCount = 0
+        while animationCount < 12:
+            for spriteFrame in spriteFrameRawData:
+                for i in range(0, strip.numPixels(), 1):
+                    strip.setPixelColor(i, Color(int(spriteFrame[i][0]), int(spriteFrame[i][1]), int(spriteFrame[i][2])))
+                    
+                    
+                    #strip.setPixelColor(i, Color(int(spriteFrame[i][2]), int(spriteFrame[i][1]), int(spriteFrame[i][0])))
+                    
+                strip.show()
+                time.sleep(1/len(selectedSpriteFrames))
+            animationCount = animationCount + 1
 
-    scheduler.enter(1, 1, animateRandomSprite, (sc,))
-    #except:
-    #    animateRandomSprite(0)
+        scheduler.enter(1, 1, animateRandomSprite, (sc,))
+    except:
+        animateRandomSprite(0)
     
 # start animating!
 animateRandomSprite(0)
